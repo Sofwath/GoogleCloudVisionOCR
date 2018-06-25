@@ -6,12 +6,7 @@ First setup the environment,  instructions at : https://cloud.google.com/vision/
 example usage:
   python3 thaanaocr.py img1.png -out_image out.png -out_file out.txt
 
-img1.png
-
 -out_image (optional)
-
-out.png
-
 -out_file (optional)
 
 
