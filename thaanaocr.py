@@ -28,7 +28,8 @@ def draw_boxes(image, bounds, color):
     return image
 
 def do_documnet_ocr(image_file, feature):
-
+	
+	image_context = types.ImageContext(language_hints =["dv"]) 
 	client = vision.ImageAnnotatorClient()
 
 	with io.open(image_file, 'rb') as image_file:
@@ -36,7 +37,7 @@ def do_documnet_ocr(image_file, feature):
 
 	image = types.Image(content=content)
 
-	response = client.document_text_detection(image=image)
+	response = client.document_text_detection(image=image,image_context=image_context)
 	document = response.full_text_annotation
 
 	bounds = []
